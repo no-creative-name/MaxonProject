@@ -1,0 +1,63 @@
+body {
+    overflow: hidden;
+}
+
+.col {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    box-shadow: 10px 10px 30px black;
+    -webkit-transition: all 1s ease, opacity 0.3s;
+    transition: all 1s ease, opacity 0.3s;
+}
+
+#fan-container {
+    min-width: 100%;
+}
+
+#fan-row {
+    min-height: 100%;
+}
+
+#first-column {
+    background-color: #FF5555;
+}
+
+#second-column {
+    background-color: #FFAE00;
+}
+
+#third-column {
+    background-color: #C0384F;
+}
+
+#fourth-column {
+    background-color: red;
+}
+
+.is-hovered {
+    opacity: 0.8;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+}
+
+img {
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.info-text {
+    visibility: hidden;
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.is-visible {
+    visibility: visible;
+}
