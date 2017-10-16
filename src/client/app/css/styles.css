@@ -22,19 +22,19 @@ body {
 }
 
 #first-column {
-    background-color: #FF5555;
+    background-color: lightgrey;
 }
 
 #second-column {
-    background-color: #FFAE00;
+    background-color: lightgrey;
 }
 
 #third-column {
-    background-color: #C0384F;
+    background-color: lightgrey;
 }
 
 #fourth-column {
-    background-color: red;
+    background-color: lightgrey;
 }
 
 .is-hovered {
@@ -44,6 +44,8 @@ body {
 .thumbnail {
     width: 80px;
     height: 80px;
+    top: 100px;
+    position: absolute;
 }
 
 img {
@@ -52,10 +54,26 @@ img {
     pointer-events: none;
 }
 
-.info-text {
+.info {
     visibility: hidden;
-    text-align: center;
     flex-basis: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.align-left {
+    margin-left: 40px;
+    text-align: left;
+}
+
+.align-right {
+    margin-right: 40px;
+    text-align: right;
+}
+
+.info-headline {
+    font-weight: bold;
+    font-size: 3em;
 }
 
 .is-visible {
