@@ -2,14 +2,25 @@
 @import './variables/_variables.scss';
 
 body {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: $main-font-family;
+    font-weight: 300;
+}
+
+.overflow-y-visible {
+    overflow-y: visible;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .container {
     width: 100%;
     height: 100%;
-    position: relative;
+    //overflow: hidden;
 }
 
 #landing-page {
@@ -46,19 +57,22 @@ body {
     justify-content: center;
     align-items: flex-start;
     box-shadow: 10px 10px 30px black;
-    -webkit-transition: all 1s ease, background-color 0.3s;
+    //-webkit-transition: all 1s ease, background-color 0.3s;
     transition: all 1s ease, background-color 0.3s;
     background-color: $main-bg-color;
-    @media screen and (max-width : 700px) {
+    @media (max-width : 700px) {
         &-active {
             background-color: $col-hover-color;
         }
     }
-    &:hover {
-        background-color: $col-hover-color;
+    @media (min-width : 701px) {
+        &:hover {
+            background-color: $col-hover-color;
+        }
     }
     &-active {
         height: 200%;
+        background-color: $col-hover-color;
     }
 }
 
@@ -74,22 +88,24 @@ body {
     margin-top: $icon-margin-top;
     overflow: hidden;
     img {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        transition: all 1s ease, background-color 0.3s;
     }
-    &-placeholder {
-        min-height: 20%;
+}
+
+.col-1 {
+    .thumbnail img {
+        width: 50px;
     }
 }
 
 #fixed-on-top {
-    top: 0px;
     margin-top: 10px;
     position: fixed;
 }
 
 img {
-    -webkit-user-select: none;
+    //-webkit-user-select: none;
     user-select: none;
     pointer-events: none;
 }

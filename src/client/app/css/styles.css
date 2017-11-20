@@ -1,11 +1,19 @@
 body {
-  overflow-y: scroll;
-  overflow-x: hidden; }
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Lato";
+  font-weight: 300; }
+
+.overflow-y-visible {
+  overflow-y: visible; }
+
+::-webkit-scrollbar {
+  display: none; }
 
 .container {
   width: 100%;
-  height: 100%;
-  position: relative; }
+  height: 100%; }
 
 #landing-page {
   position: absolute;
@@ -16,7 +24,7 @@ body {
 
 #landing-page-content {
   color: #3d3d3d;
-  font-family: Lato Thin;
+  font-family: "Lato";
   font-style: normal;
   font-size: 30pt;
   cursor: default;
@@ -38,16 +46,17 @@ body {
   justify-content: center;
   align-items: flex-start;
   box-shadow: 10px 10px 30px black;
-  -webkit-transition: all 1s ease, background-color 0.3s;
   transition: all 1s ease, background-color 0.3s;
   background-color: #d3d3d3; }
-  @media screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     .col-active {
       background-color: white; } }
-  .col:hover {
-    background-color: white; }
+  @media (min-width: 701px) {
+    .col:hover {
+      background-color: white; } }
   .col-active {
-    height: 200%; }
+    height: 200%;
+    background-color: white; }
 
 #fan-container {
   min-width: 100%; }
@@ -59,18 +68,17 @@ body {
   margin-top: 150px;
   overflow: hidden; }
   .thumbnail img {
-    width: 70px;
-    height: 70px; }
-  .thumbnail-placeholder {
-    min-height: 20%; }
+    width: 80px;
+    transition: all 1s ease, background-color 0.3s; }
+
+.col-1 .thumbnail img {
+  width: 50px; }
 
 #fixed-on-top {
-  top: 0px;
   margin-top: 10px;
   position: fixed; }
 
 img {
-  -webkit-user-select: none;
   user-select: none;
   pointer-events: none; }
 
@@ -88,7 +96,7 @@ img {
     text-align: right; }
 
 .info-headline {
-  font-family: Lato Thin;
+  font-family: "Lato";
   font-weight: bold;
   font-size: 3em; }
 
