@@ -20,7 +20,7 @@ body {
 .container {
     width: 100%;
     height: 100%;
-    //overflow: hidden;
+    // overflow: hidden;
 }
 
 #landing-page {
@@ -64,12 +64,12 @@ body {
     //-webkit-transition: all 1s ease, background-color 0.3s;
     transition: all 1s ease, background-color 0.3s;
     background-color: $main-bg-color;
-    @media (max-width : 700px) {
+    @media (max-device-width : 700px) {
         &-active {
             background-color: $col-hover-color;
         }
     }
-    @media (min-width : 701px) {
+    @media (min-device-width : 701px) {
         &:hover {
             background-color: $col-hover-color;
         }

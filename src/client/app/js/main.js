@@ -34,16 +34,9 @@ $(document).ready(function(){
                 $(this).parents().children().children(".info-text").removeClass("is-visible");
                 $(this).children(".info").addClass("is-visible");
             }
-            console.log(isAnimationFinished);
             setTimeout(function() {
                 isAnimationFinished = true;
             }, 1000);
-            /*$(this).on('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function (e) {
-                if($(e.target).is(this)) {
-                    isAnimationFinished = true;
-                    $(this).off('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd');
-                }
-            });*/
         } 
     });
     menuTopOnScroll();
