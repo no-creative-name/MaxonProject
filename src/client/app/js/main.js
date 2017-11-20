@@ -1,11 +1,17 @@
 var isAnimationFinished = true;
 var isAnyColumnActive = false;
 
+document.addEventListener('DOMContentLoaded', function () {
+    var landingPage = document.getElementById("landing-page");
+    var hammertime = new Hammer(landingPage);
+    hammertime.on('pan', handleDrag);
+});
+
 $(document).ready(function(){
 
-    $("#landing-page").click(function() {
+    /*$("#landing-page").click(function() {
         $(this).animate({'bottom': 2000}, 1000);
-    });
+    });*/
 
     $(".col").click(function(){
         if(isAnimationFinished) {
@@ -63,4 +69,43 @@ function menuTopOnScroll () {
             $('.thumbnail').attr('id', '');;
         }
     });
+}
+
+
+var lastPosX = 0;
+var isDragging = false;
+
+function handleDrag(ev) {
+  
+  // for convience, let's get a reference to our object
+  var elem = ev.target;
+  
+  // DRAG STARTED
+  // here, let's snag the current position
+  // and keep track of the fact that we're dragging
+  if ( ! isDragging ) {
+    isDragging = true;
+    lastPosX = elem.offsetLeft;
+  }
+  
+  // we simply need to determine where the x,y of this
+  // object is relative to where it's "last" known position is
+  // NOTE: 
+  //    deltaX and deltaY are cumulative
+  // Thus we need to always calculate 'real x and y' relative
+  // to the "lastPosX/Y"
+  var posX = ev.deltaX + lastPosX;
+  
+  // move our element to that position
+  elem.style.left = posX + "px";
+  
+  // DRAG ENDED
+  // this is where we simply forget we are dragging
+  if (parseInt(elem.style.left) > $(window).width()/3) {
+        $("#landing-page").animate({'left': 2000}, 1000);
+    }
+  if (ev.isFinal) {
+    isDragging = false;
+    } 
+
 }

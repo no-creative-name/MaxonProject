@@ -6,8 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass ./src/client/app/sass/ -o ./src/client/app/css/",
-    "build-css:watch": "node-sass ./src/client/app/sass/ -o ./src/client/app/css/ --watch"
+    "build-css:watch": "node-sass ./src/client/app/sass/ -o ./src/client/app/css/ --watch",
+    "start:dev": "webpack-dev-server --host 0.0.0.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
 }
