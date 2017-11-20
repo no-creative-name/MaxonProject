@@ -39,15 +39,19 @@ body {
     cursor: default;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center; 
     user-select: none;
 }
 
-#landing-page-image::after {
-    content: "\A";
-    white-space: pre;
-  }
+#landing-page-image {
+    margin-bottom: 30px;
+}
+
+#maxon {
+    color: $brand-color;
+}
 
 .col {
     min-height: 100%;
@@ -108,6 +112,11 @@ img {
     //-webkit-user-select: none;
     user-select: none;
     pointer-events: none;
+}
+
+.thumb-placeholder {
+    visibility: hidden;
+    height: 220px;
 }
 
 .info {

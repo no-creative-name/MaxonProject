@@ -4,7 +4,7 @@ var isAnyColumnActive = false;
 $(document).ready(function(){
 
     $("#landing-page").click(function() {
-        $(this).animate({'left': 1920}, 1000);
+        $(this).animate({'bottom': 2000}, 1000);
     });
 
     $(".col").click(function(){

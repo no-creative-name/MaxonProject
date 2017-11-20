@@ -30,13 +30,16 @@ body {
   cursor: default;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   user-select: none; }
 
-#landing-page-image::after {
-  content: "\A";
-  white-space: pre; }
+#landing-page-image {
+  margin-bottom: 30px; }
+
+#maxon {
+  color: #d10019; }
 
 .col {
   min-height: 100%;
@@ -81,6 +84,10 @@ body {
 img {
   user-select: none;
   pointer-events: none; }
+
+.thumb-placeholder {
+  visibility: hidden;
+  height: 220px; }
 
 .info {
   min-height: 80%;
