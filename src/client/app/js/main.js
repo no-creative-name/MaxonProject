@@ -77,34 +77,34 @@ var isDragging = false;
 
 function handleDrag(ev) {
   
-  // for convience, let's get a reference to our object
-  var elem = ev.target;
-  
-  // DRAG STARTED
-  // here, let's snag the current position
-  // and keep track of the fact that we're dragging
-  if ( ! isDragging ) {
+    // for convience, let's get a reference to our object
+    var elem = document.getElementById("landing-page");
+
+    // DRAG STARTED
+    // here, let's snag the current position
+    // and keep track of the fact that we're dragging
+    if ( ! isDragging ) {
     isDragging = true;
     lastPosX = elem.offsetLeft;
-  }
-  
-  // we simply need to determine where the x,y of this
-  // object is relative to where it's "last" known position is
-  // NOTE: 
-  //    deltaX and deltaY are cumulative
-  // Thus we need to always calculate 'real x and y' relative
-  // to the "lastPosX/Y"
-  var posX = ev.deltaX + lastPosX;
-  
-  // move our element to that position
-  elem.style.left = posX + "px";
-  
-  // DRAG ENDED
-  // this is where we simply forget we are dragging
-  if (parseInt(elem.style.left) > $(window).width()/3) {
+    }
+
+    // we simply need to determine where the x,y of this
+    // object is relative to where it's "last" known position is
+    // NOTE: 
+    //    deltaX and deltaY are cumulative
+    // Thus we need to always calculate 'real x and y' relative
+    // to the "lastPosX/Y"
+    var posX = ev.deltaX + lastPosX;
+
+    // move our element to that position
+    elem.style.left = posX + "px";
+
+    // DRAG ENDED
+    // this is where we simply forget we are dragging
+    if (parseInt(elem.style.left) > $(window).width()/3) {
         $("#landing-page").animate({'left': 2000}, 1000);
     }
-  if (ev.isFinal) {
+    if (ev.isFinal) {
     isDragging = false;
     } 
 
