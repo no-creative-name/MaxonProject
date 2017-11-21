@@ -54,11 +54,11 @@ function resetActiveColumn (col) {
 }
 
 function menuTopOnScroll () {
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > ($('.thumbnail').position().top)) {
+    $(".container").scroll(function () {
+        if ($(".container").scrollTop() > ($('.thumbnail').position().top)) {
             $('.thumbnail').attr('id', 'fixed-on-top');
         }
-        if ($(window).scrollTop() < 150-10 ) {
+        if ($(".container").scrollTop() < 150-10 ) {
             $('.thumbnail').attr('id', '');;
         }
     });
