@@ -1,17 +1,17 @@
 var isAnimationFinished = true;
 var isAnyColumnActive = false;
 
+var lastPosX = 0;
+var isDragging = false;
+var isOutOfViewport = false;
+
 document.addEventListener('DOMContentLoaded', function () {
     var landingPage = document.getElementById("landing-page");
     var hammertime = new Hammer(landingPage);
-    hammertime.on('pan', handleDrag);
+    hammertime.on('pan', handleLandingPageDrag);
 });
 
 $(document).ready(function(){
-
-    /*$("#landing-page").click(function() {
-        $(this).animate({'bottom': 2000}, 1000);
-    });*/
 
     $(".col").click(function(){
         if(isAnimationFinished) {
@@ -64,14 +64,11 @@ function menuTopOnScroll () {
     });
 }
 
-
-var lastPosX = 0;
-var isDragging = false;
-
-function handleDrag(ev) {
+function handleLandingPageDrag(ev) {
   
     // for convience, let's get a reference to our object
     var elem = document.getElementById("landing-page");
+    var lPage = $("#landing-page");
 
     // DRAG STARTED
     // here, let's snag the current position
@@ -95,10 +92,16 @@ function handleDrag(ev) {
     // DRAG ENDED
     // this is where we simply forget we are dragging
     if (parseInt(elem.style.left) > $(window).width()/3) {
-        $("#landing-page").animate({'left': 2000}, 1000);
+        lPage.animate({'left': 2000}, 1000);
+        isOutOfViewport = true;
     }
-    if (ev.isFinal) {
-    isDragging = false;
+    else if (-parseInt(elem.style.left) > $(window).width()/3) {
+        lPage.animate({'left': -2000}, 1000);
+        isOutOfViewport = true;
+    }
+    if (ev.isFinal && !isOutOfViewport) {
+        isDragging = false;
+        lPage.animate({'left': 15}, 1300, "easeOutBounce");
     } 
 
 }

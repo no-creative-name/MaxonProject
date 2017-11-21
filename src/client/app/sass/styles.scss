@@ -13,6 +13,10 @@ body {
     overflow-y: visible;
 }
 
+::-scrollbar { 
+    display: none; 
+}
+
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -20,7 +24,8 @@ body {
 .container {
     width: 100%;
     height: 100%;
-    // overflow: hidden;
+    overflow-x: hidden;
+    position: absolute;
 }
 
 #landing-page {
@@ -28,7 +33,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: $main-bg-color;
+    background-color: $landing-page-bg-color;
 }
 
 #landing-page-content {
@@ -75,7 +80,7 @@ body {
         }
     }
     &-active {
-        height: 200%;
+        //height: 200%;
         background-color: $col-hover-color;
     }
 }
@@ -121,31 +126,31 @@ img {
 
 .info {
     min-height: 80%;
-    visibility: hidden;
+    display: none;
     flex-basis: 100%;
     overflow: hidden;
-    white-space: nowrap;
+    margin: 40px;
     
     &.align-left {
-        margin-left: 40px;
         text-align: left;
     }
 
     &.align-right {
-        margin-right: 40px;
         text-align: right;
+    }
+    &-text {
+        margin-bottom: 100px;
+    }
+    &-headline {
+        overflow: hidden;
+        font-family: $main-font-family;
+        font-weight: bold;
+        font-size: 3em;
     }
 }
 
-
-.info-headline {
-    font-family: $main-font-family;
-    font-weight: bold;
-    font-size: 3em;
-}
-
 .is-visible {
-    visibility: visible;
+    display: block;
 }
 
 
