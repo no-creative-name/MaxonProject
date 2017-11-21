@@ -1,19 +1,9 @@
 var isAnimationFinished = true;
 var isAnyColumnActive = false;
 
-var lastPosX = 0;
-var isDragging = false;
-var isOutOfViewport = false;
-
-document.addEventListener('DOMContentLoaded', function () {
-    var landingPage = document.getElementById("landing-page");
-    var hammertime = new Hammer(landingPage);
-    hammertime.on('pan', handleLandingPageDrag);
-});
-
 $(document).ready(function(){
 
-    $(".col").click(function(){
+    /*$(".col").click(function(){
         if(isAnimationFinished) {
             isAnimationFinished = false;
             resetAllColumnsToDefaultWidth($(this));
@@ -38,19 +28,14 @@ $(document).ready(function(){
                 isAnimationFinished = true;
             }, 1000);
         } 
-    });
+    });*/
     menuTopOnScroll();
     
 });
 
-function resetAllColumnsToDefaultWidth (col) {
-    col.siblings().removeClass("col-1 col-9").addClass("col-3");
-    col.parents().children().children(".info").removeClass("is-visible");
-}
-
-function resetActiveColumn (col) {
-    col.siblings().removeClass("col-active");
-    col.toggleClass("col-3 col-9 col-active");
+function resetAllColumnsToDefaultWidth () {
+    $("#fan-row").children().removeClass("col-1 col-9").addClass("col-3");
+    $("#fan-row").children().children(".info").removeClass("is-visible");
 }
 
 function menuTopOnScroll () {
@@ -64,10 +49,28 @@ function menuTopOnScroll () {
     });
 }
 
+var lastPosX = 0;
+var isDragging = false;
+var isOutOfViewport = false;
+var isScrolling = false;
+
+document.addEventListener('DOMContentLoaded', function () {
+    var landingPage = document.getElementById("landing-page");
+    var landingPageHammer = new Hammer(landingPage);
+    landingPageHammer.on('pan', handleLandingPageDrag);
+
+   for(let i = 0; i < 4; i++) {
+        var column = $(".col")[i];
+        var columnHammer = new Hammer(column);
+        
+        columnHammer.on("panleft panright", handleColumnDrag);
+    };
+});
+
 function handleLandingPageDrag(ev) {
   
     // for convience, let's get a reference to our object
-    var elem = document.getElementById("landing-page");
+    var elem = document.getElementById("landing-page");;
     var lPage = $("#landing-page");
 
     // DRAG STARTED
@@ -102,6 +105,48 @@ function handleLandingPageDrag(ev) {
     if (ev.isFinal && !isOutOfViewport) {
         isDragging = false;
         lPage.animate({'left': 15}, 1300, "easeOutBounce");
+    } 
+
+}
+
+function handleColumnDrag(ev) {
+
+    var elem = $(ev.target);
+    if(elem.parents(".col").length) {
+        elem = elem.parent(".col");
+    }
+    var angle = Math.abs(ev.angle);
+
+    if(angle > 20 && angle < 160){
+        isScrolling = true;
+    }
+    else {
+        isScrolling = false;
+    }
+    
+    if(isAnimationFinished && !isScrolling) {
+        isAnimationFinished = false;
+        resetAllColumnsToDefaultWidth();
+        //If active column is clicked
+        if(elem.hasClass("col-active")) {
+            $(document.body).removeClass("overflow-y-visible");
+            isAnyColumnActive = false;
+            elem.removeClass("col-9 col-active");    
+        } else {
+            if(!isAnyColumnActive) {
+                $(document.body).addClass("overflow-y-visible");
+                isAnyColumnActive = true;
+            }
+            //Make clicked column active
+            elem.siblings().removeClass("col-9 col-3 col-active").addClass("col-1");
+            elem.removeClass("col-1 col-3").addClass("col-9 col-active");
+            //Toggle info texts
+            elem.parents().children().children(".info-text").removeClass("is-visible");
+            elem.children(".info").addClass("is-visible");
+        }
+        setTimeout(function() {
+            isAnimationFinished = true;
+        }, 1000);
     } 
 
 }
