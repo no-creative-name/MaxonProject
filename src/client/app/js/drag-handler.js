@@ -1,10 +1,3 @@
-var lastPosX = 0;
-var isDragging = false;
-var isOutOfViewport = false;
-var isScrolling = false;
-var isAnimationFinished = true;
-var isAnyColumnActive = false;
-
 document.addEventListener('DOMContentLoaded', function () {
     var landingPage = document.getElementById("landing-page");
     var landingPageHammer = new Hammer(landingPage);
@@ -16,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
         columnHammer.on("panleft panright", handleColumnDrag);
     };
 });
+
+var lastPosX = 0;
+var isDragging = false;
+var isOutOfViewport = false;
 
 function handleLandingPageDrag(ev) {
   
@@ -58,6 +55,10 @@ function handleLandingPageDrag(ev) {
 
 }
 
+var isScrolling = false;
+var isAnimationFinished = true;
+var isAnyColumnActive = false;
+
 function handleColumnDrag(ev) {
 
     var elem = $(ev.target);
@@ -85,7 +86,7 @@ function handleColumnDrag(ev) {
         if(elem.hasClass("col-active")) {
             $(document.body).removeClass("overflow-y-visible");
             isAnyColumnActive = false;
-            elem.removeClass("col-9 col-active");    
+            elem.removeClass("col-9 col-active");
         } 
         //  If inactive column is clicked
         else {
@@ -93,6 +94,8 @@ function handleColumnDrag(ev) {
                 $(document.body).addClass("overflow-y-visible");
                 isAnyColumnActive = true;
             }
+            //  Scroll to the top when you open another column
+            $(".container").scrollTop(0);
             //  Make clicked column active
             elem.siblings().removeClass("col-9 col-3 col-active").addClass("col-1");
             elem.removeClass("col-1 col-3").addClass("col-9 col-active");
