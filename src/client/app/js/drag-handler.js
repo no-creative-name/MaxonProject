@@ -13,18 +13,21 @@ document.addEventListener('DOMContentLoaded', function () {
 var lastPosX = 0;
 var isDragging = false;
 var isOutOfViewport = false;
+var widthUntilPageSlidesAway = $(window).width()/2;
 
 function handleLandingPageDrag(ev) {
   
     var elem = document.getElementById("landing-page");;
     var lPage = $("#landing-page");
 
+    lPage.stop();
+
     // DRAG STARTED
     // here, let's snag the current position
     // and keep track of the fact that we're dragging
     if ( ! isDragging ) {
-    isDragging = true;
-    lastPosX = elem.offsetLeft;
+        isDragging = true;
+        lastPosX = elem.offsetLeft;
     }
 
     // we simply need to determine where the x,y of this
@@ -40,11 +43,11 @@ function handleLandingPageDrag(ev) {
 
     // DRAG ENDED
     // this is where we simply forget we are dragging
-    if (parseInt(elem.style.left) > $(window).width()/3) {
+    if (parseInt(elem.style.left) > widthUntilPageSlidesAway) {
         lPage.animate({'left': 2000}, 1000);
         isOutOfViewport = true;
     }
-    else if (-parseInt(elem.style.left) > $(window).width()/3) {
+    else if (-parseInt(elem.style.left) > widthUntilPageSlidesAway) {
         lPage.animate({'left': -2000}, 1000);
         isOutOfViewport = true;
     }

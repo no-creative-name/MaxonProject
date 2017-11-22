@@ -25,22 +25,22 @@ body {
   height: 100%;
   z-index: 1;
   background-color: white; }
-
-#landing-page-content {
-  color: #3d3d3d;
-  font-family: "Lato";
-  font-style: normal;
-  font-size: 30pt;
-  cursor: default;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  user-select: none; }
-
-#landing-page-image {
-  margin-bottom: 30px; }
+  #landing-page-content {
+    color: #3d3d3d;
+    font-family: "Lato";
+    font-style: normal;
+    font-size: 30pt;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none; }
+  #landing-page-image {
+    margin-bottom: 30px; }
+  #landing-page-instruction {
+    color: #6d6d6d; }
 
 #maxon {
   color: #d10019; }

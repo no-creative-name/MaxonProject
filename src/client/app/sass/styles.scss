@@ -33,24 +33,25 @@ body {
     height: 100%;
     z-index: 1;
     background-color: $landing-page-bg-color;
-}
-
-#landing-page-content {
-    color: $main-font-color;
-    font-family: $main-font-family;
-    font-style: normal;
-    font-size: 30pt;
-    cursor: default;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    user-select: none;
-}
-
-#landing-page-image {
-    margin-bottom: 30px;
+    &-content{
+        color: $main-font-color;
+        font-family: $main-font-family;
+        font-style: normal;
+        font-size: 30pt;
+        cursor: default;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        user-select: none;
+    }
+    &-image {
+        margin-bottom: 30px;
+    }
+    &-instruction {
+        color: $secondary-font-color;
+    }
 }
 
 #maxon {
