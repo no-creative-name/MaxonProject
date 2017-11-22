@@ -73,11 +73,11 @@ body {
             background-color: $col-hover-color;
         }
     }
-    @media (min-device-width : 701px) {
+    /*@media (min-device-width : 701px) {
         &:hover {
             background-color: $col-hover-color;
         }
-    }
+    }*/
     &-active {
         //height: 200%;
         background-color: $col-hover-color;

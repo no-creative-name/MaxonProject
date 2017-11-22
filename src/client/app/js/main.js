@@ -112,9 +112,10 @@ function handleLandingPageDrag(ev) {
 function handleColumnDrag(ev) {
 
     var elem = $(ev.target);
-    if(elem.parents(".col").length) {
-        elem = elem.parent(".col");
+    if(!elem.hasClass("col")) {
+        elem = elem.parents(".col");
     }
+    console.log(elem);
     var angle = Math.abs(ev.angle);
 
     if(angle > 20 && angle < 160){

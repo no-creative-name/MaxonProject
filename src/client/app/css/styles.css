@@ -54,12 +54,14 @@ body {
   align-items: flex-start;
   box-shadow: 10px 10px 30px black;
   transition: all 1s ease, background-color 0.3s;
-  background-color: #d3d3d3; }
+  background-color: #d3d3d3;
+  /*@media (min-device-width : 701px) {
+        &:hover {
+            background-color: $col-hover-color;
+        }
+    }*/ }
   @media (max-device-width: 700px) {
     .col-active {
-      background-color: white; } }
-  @media (min-device-width: 701px) {
-    .col:hover {
       background-color: white; } }
   .col-active {
     background-color: white; }
