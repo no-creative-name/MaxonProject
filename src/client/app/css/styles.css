@@ -40,7 +40,9 @@ body {
   #landing-page-image {
     margin-bottom: 30px; }
   #landing-page-instruction {
-    color: #6d6d6d; }
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
 
 #maxon {
   color: #d10019; }
