@@ -1,3 +1,11 @@
+@keyframes arrow-bounce {
+  0% {
+    margin: 50px; }
+  50% {
+    margin: 20px; }
+  100% {
+    margin: 50px; } }
+
 body {
   width: 100%;
   height: 100%;
@@ -41,7 +49,18 @@ body {
   #landing-page-image {
     margin-bottom: 30px; }
   #landing-page-instruction {
-    color: white; }
+    height: 50px;
+    color: white;
+    font-size: 20pt;
+    position: absolute;
+    display: flex;
+    bottom: 10px; }
+    #landing-page-instruction .arrows::before {
+      margin: 50px;
+      animation-name: arrow-bounce;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease; }
 
 #maxon {
   color: #d10019; }
