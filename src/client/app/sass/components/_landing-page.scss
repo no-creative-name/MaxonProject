@@ -1,0 +1,49 @@
+@keyframes arrow-bounce {
+    0% {margin: 50px;}
+    50% {margin: 20px;}
+    100% {margin: 50px;}
+}
+
+#landing-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: $landing-page-bg-gradient;
+    background-attachment: fixed;
+    &-content{
+        color: $main-font-color;
+        font-family: $main-font-family;
+        font-style: normal;
+        font-size: 30pt;
+        cursor: default;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        user-select: none;
+    }
+    &-image {
+        margin-bottom: 30px;
+    }
+    &-instruction {
+        height: 50px;
+        color: $third-font-color;
+        font-size: 20pt;
+        position: absolute;
+        display: flex;
+        bottom: 10px;
+        .arrows::before {
+            margin: 50px;
+            animation-name: arrow-bounce;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+    }
+}
+
+#maxon {
+    color: $brand-color;
+}
