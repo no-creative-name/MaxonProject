@@ -24,7 +24,8 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: white; }
+  background: -webkit-linear-gradient(-45deg, white, #5a5a5a);
+  background-attachment: fixed; }
   #landing-page-content {
     color: #3d3d3d;
     font-family: "Lato";
@@ -40,9 +41,7 @@ body {
   #landing-page-image {
     margin-bottom: 30px; }
   #landing-page-instruction {
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    color: white; }
 
 #maxon {
   color: #d10019; }

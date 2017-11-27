@@ -32,7 +32,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: $landing-page-bg-color;
+    background: $landing-page-bg-gradient;
+    background-attachment: fixed;
     &-content{
         color: $main-font-color;
         font-family: $main-font-family;
@@ -50,9 +51,7 @@ body {
         margin-bottom: 30px;
     }
     &-instruction {
-        background: -webkit-linear-gradient(#eee, #333);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: $third-font-color;
     }
 }
 
@@ -99,14 +98,14 @@ body {
     margin-top: $icon-margin-top;
     overflow: hidden;
     img {
-        width: 80px;
+        width: $icon-width-big;
         transition: all 1s ease, background-color 0.3s;
     }
 }
 
 .col-1 {
     .thumbnail img {
-        width: 50px;
+        width: $icon-width-small;
     }
 }
 
@@ -153,18 +152,4 @@ img {
 
 .is-visible {
     display: block;
-}
-
-
-
-#first-column {
-}
-
-#second-column {
-}
-
-#third-column {
-}
-
-#fourth-column {
 }
