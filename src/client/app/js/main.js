@@ -1,6 +1,25 @@
 
 $(document).ready(function(){
     menuTopOnScroll();
+
+    $('.col').click(function(){
+        if(isAnimationFinished && !isScrolling) {
+            isAnimationFinished = false;
+            resetSiblingColumns($(this));
+            //  If active column is clicked
+            if($(this).hasClass("col-active")) {
+                makeActiveColumnInactive($(this));
+            } 
+            //  If inactive column is clicked
+            else {
+                makeInactiveColumnActive($(this));
+            }
+            // Timeout to prevent multiple animations to disturb each other
+            setTimeout(function() {
+                isAnimationFinished = true;
+            }, 1000);
+        } 
+    })
 });
 
 function menuTopOnScroll () {
