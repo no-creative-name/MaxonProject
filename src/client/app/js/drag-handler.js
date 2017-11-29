@@ -101,7 +101,7 @@ var widthUntilPageSlidesAway = $(window).width()/2;
 
 function handleLandingPageDrag(ev) {
   
-    var elem = document.getElementById("landing-page");;
+    var elem = document.getElementById("landing-page");
     var lPage = $("#landing-page");
 
     lPage.stop();
@@ -144,6 +144,14 @@ function handleLandingPageDrag(ev) {
 
 }
 
+//  HOME BUTTON CLICK
+
+function onHomeButtonClick() {
+    var lPage = $("#landing-page");
+    lPage.animate({'left': 15}, 1000, "easeOutBounce");
+    isLandingPageOutOfViewport = false;
+}
+
 //  GENERAL DRAG LOGIC
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -162,4 +170,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(document).ready(function(){
     $('.col').click(function(){onColumnClick($(this))});
+    $('#home-button').click(function(){onHomeButtonClick()});
 });
