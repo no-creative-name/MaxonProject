@@ -1,8 +1,8 @@
-//  COLUMN DRAG
-
+var isColumnTransformationFinished = true;
 var isScrolling = false;
-var isAnimationFinished = true;
 var isAnyColumnActive = false;
+
+//  COLUMN TRANSFORM HELPER FUNCTIONS
 
 function resetSiblingColumns (column) {
     column.parent().children().removeClass("col-1 col-9").addClass("col-3");
@@ -30,6 +30,29 @@ function makeInactiveColumnActive (column) {
     column.children(".info").addClass("is-visible");
 }
 
+//  COLUMN CLICK
+
+function onColumnClick (elem) {
+    if(isColumnTransformationFinished) {
+        isColumnTransformationFinished = false;
+        resetSiblingColumns(elem);
+        //  If active column is clicked
+        if(elem.hasClass("col-active")) {
+            makeActiveColumnInactive(elem);
+        } 
+        //  If inactive column is clicked
+        else {
+            makeInactiveColumnActive(elem);
+        }
+        // Timeout to prevent multiple animations to disturb each other
+        setTimeout(function() {
+            isColumnTransformationFinished = true;
+        }, 1000);
+    }
+}
+
+//  COLUMN DRAG
+
 function handleColumnDrag(ev) {
 
     var elem = $(ev.target);
@@ -50,8 +73,8 @@ function handleColumnDrag(ev) {
     }
     
     //  Actual animation
-    if(isAnimationFinished && !isScrolling) {
-        isAnimationFinished = false;
+    if(isColumnTransformationFinished && !isScrolling) {
+        isColumnTransformationFinished = false;
         resetSiblingColumns(elem);
         //  If active column is clicked
         if(elem.hasClass("col-active")) {
@@ -63,7 +86,7 @@ function handleColumnDrag(ev) {
         }
         // Timeout to prevent multiple animations to disturb each other
         setTimeout(function() {
-            isAnimationFinished = true;
+            isColumnTransformationFinished = true;
         }, 1000);
     } 
 
@@ -121,7 +144,7 @@ function handleLandingPageDrag(ev) {
 
 }
 
-// GENERAL DRAG LOGIC
+//  GENERAL DRAG LOGIC
 
 document.addEventListener('DOMContentLoaded', function () {
     var landingPage = document.getElementById("landing-page");
@@ -135,24 +158,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
+//  GENERAL CLICK LOGIC
 
 $(document).ready(function(){
-    $('.col').click(function(){
-        if(isAnimationFinished && !isScrolling) {
-            isAnimationFinished = false;
-            resetSiblingColumns($(this));
-            //  If active column is clicked
-            if($(this).hasClass("col-active")) {
-                makeActiveColumnInactive($(this));
-            } 
-            //  If inactive column is clicked
-            else {
-                makeInactiveColumnActive($(this));
-            }
-            // Timeout to prevent multiple animations to disturb each other
-            setTimeout(function() {
-                isAnimationFinished = true;
-            }, 1000);
-        } 
-    });
+    $('.col').click(function(){onColumnClick($(this))});
 });
