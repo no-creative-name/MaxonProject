@@ -15,7 +15,10 @@ body {
     z-index: 1;
     color: white;
     cursor: pointer;
-    background-color: black;
+    &::before {
+        font-size: 20pt;
+        margin: 20px;
+    }
 }
 
 .overflow-y-visible {
