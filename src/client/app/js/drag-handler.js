@@ -155,7 +155,7 @@ function handleLandingPageDrag(ev) {
 
 function onHomeButtonClick() {
     var lPage = $("#landing-page");
-    lPage.animate({'left': 15}, 1000, "easeOutBounce");
+    lPage.animate({'left': 15}, 1000, "easeOutBack");
     isLandingPageOutOfViewport = false;
     resetAllColumns($("#fan-row"));
 }
