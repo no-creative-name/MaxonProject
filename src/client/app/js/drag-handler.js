@@ -9,10 +9,17 @@ function resetSiblingColumns (column) {
     column.parent().children().children(".info").removeClass("is-visible");
 }
 
+function resetAllColumns (row) {
+    $(document.body).removeClass("overflow-y-visible");
+    row.children().removeClass("col-1 col-9 col-active").addClass("col-3");
+    row.children().children(".info").removeClass("is-visible");
+    isAnyColumnActive = false;
+}
+
 function makeActiveColumnInactive (column) {
     $(document.body).removeClass("overflow-y-visible");
-    isAnyColumnActive = false;
     column.removeClass("col-9 col-active");
+    isAnyColumnActive = false;
 }
 
 function makeInactiveColumnActive (column) {
@@ -150,6 +157,7 @@ function onHomeButtonClick() {
     var lPage = $("#landing-page");
     lPage.animate({'left': 15}, 1000, "easeOutBounce");
     isLandingPageOutOfViewport = false;
+    resetAllColumns($("#fan-row"));
 }
 
 //  GENERAL DRAG LOGIC

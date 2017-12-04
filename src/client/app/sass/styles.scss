@@ -11,13 +11,13 @@ body {
 }
 
 #home-button {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     color: white;
     cursor: pointer;
     &::before {
         font-size: 20pt;
-        margin: 20px;
+        margin: -5px;
     }
 }
 
