@@ -44,27 +44,37 @@
 #maxon {
   color: #d10019; }
 
+.video {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  min-width: 100%;
+  height: 75%; }
+  .video-thumb {
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    z-index: 2; }
+    .video-thumb-play {
+      width: 100px;
+      height: 100px;
+      margin-top: 40px;
+      opacity: 0.5; }
+  .video-player {
+    width: 100%;
+    height: 100%; }
+
 #video-thumb-container {
   display: flex;
   min-width: 100%;
   height: 25%; }
 
-#videos-container {
+#video-container {
   min-width: 100%;
   background-color: black; }
-
-#video-container {
-  display: flex;
-  min-width: 100%;
-  height: 75%; }
-
-.video-thumb {
-  width: 25%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  z-index: 2; }
 
 #video-thumb1 {
   background-image: url("https://img.youtube.com/vi/DbF91ZtpGGc/0.jpg"); }
@@ -77,21 +87,6 @@
 
 #video-thumb4 {
   background-image: url("https://img.youtube.com/vi/EFO9EiXFG4c/0.jpg"); }
-
-.video-thumb-play {
-  width: 100px;
-  height: 100px;
-  margin-top: 40px;
-  opacity: 0.5; }
-
-.video {
-  width: 100%;
-  height: 100%;
-  text-align: center; }
-
-.video-player {
-  width: 100%;
-  height: 100%; }
 
 #video-overlay {
   background-color: black;
