@@ -49,6 +49,10 @@
   min-width: 100%;
   height: 25%; }
 
+#videos-container {
+  min-width: 100%;
+  background-color: black; }
+
 #video-container {
   display: flex;
   min-width: 100%;
@@ -57,44 +61,48 @@
 .video-thumb {
   width: 25%;
   height: 100%;
-  background-color: black;
-  background-image: url("./../img/thumb.png");
-  background-size: auto;
+  background-size: cover;
   background-position: center;
-  text-align: center; }
+  text-align: center;
+  z-index: 2; }
+
+#video-thumb1 {
+  background-image: url("https://img.youtube.com/vi/DbF91ZtpGGc/0.jpg"); }
+
+#video-thumb2 {
+  background-image: url("https://img.youtube.com/vi/KROef3M9gjk/0.jpg"); }
+
+#video-thumb3 {
+  background-image: url("https://img.youtube.com/vi/65wblLv1XDk/0.jpg"); }
+
+#video-thumb4 {
+  background-image: url("https://img.youtube.com/vi/EFO9EiXFG4c/0.jpg"); }
 
 .video-thumb-play {
   width: 100px;
   height: 100px;
-  margin-top: 40px; }
+  margin-top: 40px;
+  opacity: 0.5; }
 
 .video {
-  min-width: 100%;
-  min-height: 100%;
-  background-image: url("./../img/thumb.png");
+  width: 100%;
+  height: 100%;
   text-align: center; }
 
-.video-info {
-  margin-left: 50px;
-  color: white;
-  position: absolute; }
+.video-player {
+  width: 100%;
+  height: 100%; }
 
-.video-title {
-  margin-top: 200px;
-  font-size: 20pt;
-  font-weight: bold; }
-
-.video-description {
-  margin-top: 50px;
-  font-size: 15pt; }
-
-.video-play {
-  width: 200px;
-  height: 200px;
-  margin-top: 200px; }
-
-.fullscreen-video {
-  display: none; }
+#video-overlay {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.4s; }
 
 body {
   width: 100%;

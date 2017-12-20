@@ -172,14 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for(let i = 0; i < 4; i++) {
         var column = $(".col")[i];
-    }
-    
-    if(column != null) {
-        for(let i = 0; i < 4; i++) {
-            var columnHammer = new Hammer(column);
-            columnHammer.on("panleft panright", handleColumnDrag);
-        };
-    }
+        var columnHammer = new Hammer(column);
+        columnHammer.on("panleft panright", handleColumnDrag);
+    };
 });
 
 //  GENERAL CLICK LOGIC

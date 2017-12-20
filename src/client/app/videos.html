@@ -10,36 +10,31 @@
     <script src="./js/jquery_ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/drag-handler.js"></script>
+    <script type="text/javascript" src="./js/videos.js"></script>
     <link rel="stylesheet" type="text/css" href="./img/icons/font/flaticon.css"> 
   </head>
   <body>
-    <div class="container" id="fan-container">
-      <iframe class="fullscreen-video" src="https://www.youtube.com/embed/CyOMgwGiYBc?rel=0&autoplay=1;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    <div class="container" id="videos-container">
       <div id="video-thumb-container">
-          <div class="video-thumb">
+          <div class="video-thumb" id="video-thumb1">
             <img class="video-thumb-play" src="./img/play-btn.png"></img>
           </div>
-          <div class="video-thumb">
-              <img class="video-thumb-play" src="./img/play-btn.png"></img>
+          <div class="video-thumb" id="video-thumb2">
+            <img class="video-thumb-play" src="./img/play-btn.png"></img>
           </div>
-          <div class="video-thumb">
-              <img class="video-thumb-play" src="./img/play-btn.png"></img>
+          <div class="video-thumb" id="video-thumb3">
+            <img class="video-thumb-play" src="./img/play-btn.png"></img>
           </div>
-          <div class="video-thumb">
-              <img class="video-thumb-play" src="./img/play-btn.png"></img>
+          <div class="video-thumb" id="video-thumb4">
+            <img class="video-thumb-play" src="./img/play-btn.png"></img>
           </div>
       </div>
       <div id="video-container">
         <div class="video">
-          <div class="video-info">
-            <div class="video-title">Video No. 1</div>
-            <div class="video-description">It's a good video</div>
-          </div>
-          <img class="video-play" src="./img/play-btn.png"></img>
+          <iframe class="video-player" src="" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        <div id="video-overlay"></div>
         </div>
       </div>
     </div>
   </body>
 </html>
-
-<!-- <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/CyOMgwGiYBc?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> -->
