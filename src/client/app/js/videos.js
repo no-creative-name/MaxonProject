@@ -17,6 +17,8 @@ function onThumbClick() {
     $(".video-thumb").click(function(){
         
         $("#video-overlay").css("display", "block");
+        $(this).siblings().removeClass("active-thumb");
+        $(this).addClass("active-thumb");
 
         if($(this).attr("id") == "video-thumb1") {
             $(".video-player").attr("src", URLs[0]);
