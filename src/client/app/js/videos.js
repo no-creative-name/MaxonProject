@@ -1,8 +1,3 @@
-
-$(document).ready(function(){
-    onThumbClick();
-});
-
 var titles = ["Dusk Till Dawn","How Long", "Symphony", "There's Nothing Holdin' Me Back"];
 var descriptions = ["ZAYN ft. Sia", "Charlie Puth", "Clean Bandit ft. Zara Larsson", "Shawn Mendes"];
 var URLs =  [
@@ -15,7 +10,6 @@ var currentVid;
 
 function onThumbClick() {
     $(".video-thumb").click(function(){
-        
         $("#video-overlay").css("display", "block");
         $(this).siblings().removeClass("active-thumb");
         $(this).addClass("active-thumb");
@@ -41,3 +35,12 @@ function onThumbClick() {
         }, 1000);
     });
 }
+
+function onHomeButtonClick () {
+    window.location.href = "./index.html";    
+}
+
+$(document).ready(function(){
+    onThumbClick();
+    $('#home-button').click(function(){onHomeButtonClick()});
+});
