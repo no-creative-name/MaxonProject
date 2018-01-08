@@ -2,6 +2,7 @@
 @import './variables/_variables.scss';
 
 @import './components/_landing-page.scss';
+@import './pages/_videos.scss';
 
 body {
     width: 100%;
@@ -17,7 +18,7 @@ body {
     cursor: pointer;
     &::before {
         font-size: 20pt;
-        margin: -5px;
+        margin: -6px;
     }
 }
 
@@ -38,9 +39,11 @@ body {
     height: 100%;
     overflow-x: hidden;
     position: absolute;
+    background-color: #d3d3d3;
 }
 
 .col {
+    padding: 0;
     min-height: 100%;
     text-align: center;
     display: flex;
@@ -73,6 +76,7 @@ body {
 
 #fan-row {
     min-height: 100%;
+    min-width: 100%;
 }
 
 .thumbnail {

@@ -164,8 +164,11 @@ function onHomeButtonClick() {
 
 document.addEventListener('DOMContentLoaded', function () {
     var landingPage = document.getElementById("landing-page");
-    var landingPageHammer = new Hammer(landingPage);
-    landingPageHammer.on('pan', handleLandingPageDrag);
+
+    if(landingPage != null) {
+        var landingPageHammer = new Hammer(landingPage);
+        landingPageHammer.on('pan', handleLandingPageDrag);
+    }
 
     for(let i = 0; i < 4; i++) {
         var column = $(".col")[i];
