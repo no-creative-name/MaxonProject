@@ -1,0 +1,32 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>MaxonMotors</title>
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="./css/styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+      <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="./js/jquery_ui/jquery-ui.min.js"></script>
+      <script src="js/UnityProgress.js"></script>  
+      <script src="webgl/UnityLoader.js"></script>
+      <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "webgl/MaxonMotor_v0.7.json", {onProgress: UnityProgress});
+      </script>
+      <link rel="stylesheet" type="text/css" href="./img/icons/font/flaticon.css"> 
+    </head>
+    <body>
+      <div class="container" id="webgl-container">
+        <div class="flaticon-house" id="home-button">
+        </div>
+        <div class="webgl-viewer">
+            <div id="gameContainer" style="width: 960px; height: 600px"></div>
+            <div class="footer">
+              <div class="webgl-logo"></div>
+              <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+              <div class="title">MaxonMotor</div>
+            </div>
+        </div>
+      </div>
+    </body>
+  </html>

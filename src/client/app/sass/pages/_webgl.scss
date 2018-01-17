@@ -1,0 +1,42 @@
+.webgl-viewer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .logo {
+        background: url('../img/progressLogo.Light.png') no-repeat center / contain;
+        width: 154px;
+        height: 130px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .footer {
+        margin-top: 5px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 18px;
+        .webgl-logo, .title, .fullscreen {
+            height: 100%;
+            display: inline-block;
+            background: transparent center no-repeat;
+        }
+        .webgl-logo {
+            background-image: url('../img/webgl-logo.png');
+            width: 204px;
+            float: left;
+        }
+        .title {
+            margin-right: 10px;
+            float: right;
+        }
+        .fullscren {
+            background-image: url('../img/fullscreen.png');
+            width: 38px;
+            float: right;
+        }
+    }
+}

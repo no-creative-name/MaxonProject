@@ -108,6 +108,42 @@
   transition: 0.4s;
   display: none; }
 
+.webgl-viewer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .webgl-viewer .logo {
+    background: url("../img/progressLogo.Light.png") no-repeat center/contain;
+    width: 154px;
+    height: 130px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .webgl-viewer .footer {
+    margin-top: 5px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px; }
+    .webgl-viewer .footer .webgl-logo, .webgl-viewer .footer .title, .webgl-viewer .footer .fullscreen {
+      height: 100%;
+      display: inline-block;
+      background: transparent center no-repeat; }
+    .webgl-viewer .footer .webgl-logo {
+      background-image: url("../img/webgl-logo.png");
+      width: 204px;
+      float: left; }
+    .webgl-viewer .footer .title {
+      margin-right: 10px;
+      float: right; }
+    .webgl-viewer .footer .fullscren {
+      background-image: url("../img/fullscreen.png");
+      width: 38px;
+      float: right; }
+
 body {
   width: 100%;
   height: 100%;
@@ -133,7 +169,7 @@ body {
   display: none; }
 
 .container {
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   overflow-x: hidden;
   position: absolute;
