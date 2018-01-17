@@ -158,6 +158,7 @@ function onHomeButtonClick() {
     lPage.animate({'left': 15}, 1000, "easeOutBack");
     isLandingPageOutOfViewport = false;
     resetAllColumns($("#fan-row"));
+    document.location.hash = "";
 }
 
 //  GENERAL DRAG LOGIC
@@ -180,6 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
 //  GENERAL CLICK LOGIC
 
 $(document).ready(function(){
+    if(document.location.hash == "#running") {
+        var lPage = $("#landing-page");
+        lPage.css("left", 2000);
+        isLandingPageOutOfViewport = true;
+    }
     $('.col').click(function(){onColumnClick($(this))});
     $('#home-button').click(function(){onHomeButtonClick()});
 });
