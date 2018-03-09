@@ -1,10 +1,10 @@
 var titles = ["Dusk Till Dawn","How Long", "Symphony", "There's Nothing Holdin' Me Back"];
 var descriptions = ["ZAYN ft. Sia", "Charlie Puth", "Clean Bandit ft. Zara Larsson", "Shawn Mendes"];
 var URLs =  [
-            "https://www.youtube.com/embed/DbF91ZtpGGc?autoplay=0&showinfo=0&controls=1&rel=0",
-            "https://www.youtube.com/embed/KROef3M9gjk?autoplay=0&showinfo=0&controls=1&rel=0",
-            "https://www.youtube.com/embed/65wblLv1XDk?autoplay=0&showinfo=0&controls=1&rel=0",
-            "https://www.youtube.com/embed/EFO9EiXFG4c?autoplay=0&showinfo=0&controls=1&rel=0"
+            "https://www.youtube.com/embed/NisdK3g7TPA?autoplay=0&showinfo=0&controls=1&rel=0",
+            "https://www.youtube.com/embed/rCHMUBSKIl0?autoplay=0&showinfo=0&controls=1&rel=0",
+            "https://www.youtube.com/embed/NisdK3g7TPA?autoplay=0&showinfo=0&controls=1&rel=0",
+            "https://www.youtube.com/embed/rCHMUBSKIl0?autoplay=0&showinfo=0&controls=1&rel=0"
             ];
 var currentVid;
 
