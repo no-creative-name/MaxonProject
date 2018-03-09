@@ -15,18 +15,26 @@ function onThumbClick() {
         $(this).addClass("active-thumb");
 
         if($(this).attr("id") == "video-thumb1") {
+            $(this).siblings().css("z-index", 2);
+            $(this).css("z-index", 1000);
             $(".video-player").attr("src", URLs[0]);
             currentVid = 1;
         }
         if($(this).attr("id") == "video-thumb2") {
+            $(this).siblings().css("z-index", 2);
+            $(this).css("z-index", 1000);
             $(".video-player").attr("src", URLs[1]);
             currentVid = 2;
         }
         if($(this).attr("id") == "video-thumb3") {
+            $(this).siblings().css("z-index", 2);
+            $(this).css("z-index", 1000);
             $(".video-player").attr("src", URLs[2]);
             currentVid = 3;
         }
         if($(this).attr("id") == "video-thumb4") {
+            $(this).siblings().css("z-index", 2);
+            $(this).css("z-index", 1000);
             $(".video-player").attr("src", URLs[3]);
             currentVid = 4;
         }

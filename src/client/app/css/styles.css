@@ -60,7 +60,14 @@
     height: 100%;
     background-size: auto;
     background-position: center;
-    text-align: center; }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; }
+    .video-thumb-description {
+      background-color: white;
+      box-shadow: 0 10px 50px black; }
   .video-player {
     width: 100%;
     height: 100%; }
@@ -77,24 +84,19 @@
 
 .active-thumb {
   transition: 0.3s;
-  box-shadow: 0 10px 50px black;
-  filter: brightness(50%);
-  -webkit-filter: brightness(50%);
-  -moz-filter: brightness(50%);
-  -o-filter: brightness(50%);
-  -ms-filter: brightness(50%); }
+  box-shadow: 0 10px 50px black; }
 
 #video-thumb1 {
-  background-image: url("https://img.youtube.com/vi/DbF91ZtpGGc/0.jpg"); }
+  background-image: url("https://img.youtube.com/vi/NisdK3g7TPA/0.jpg"); }
 
 #video-thumb2 {
-  background-image: url("https://img.youtube.com/vi/KROef3M9gjk/0.jpg"); }
+  background-image: url("https://img.youtube.com/vi/rCHMUBSKIl0/0.jpg"); }
 
 #video-thumb3 {
-  background-image: url("https://img.youtube.com/vi/65wblLv1XDk/0.jpg"); }
+  background-image: url("https://img.youtube.com/vi/NisdK3g7TPA/0.jpg"); }
 
 #video-thumb4 {
-  background-image: url("https://img.youtube.com/vi/EFO9EiXFG4c/0.jpg"); }
+  background-image: url("https://img.youtube.com/vi/rCHMUBSKIl0/0.jpg"); }
 
 #video-overlay {
   background-color: black;
