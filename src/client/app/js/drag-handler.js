@@ -145,7 +145,7 @@ function handleLandingPageDrag(ev) {
         }
         else {
             isDragging = false;
-            lPage.animate({'left': 15}, 1300, "easeOutBounce");
+            lPage.animate({'left': 0}, 1300, "easeOutBounce");
         }
     } 
 
@@ -155,7 +155,7 @@ function handleLandingPageDrag(ev) {
 
 function onHomeButtonClick() {
     var lPage = $("#landing-page");
-    lPage.animate({'left': 15}, 1000, "easeOutBack");
+    lPage.animate({'left': 0}, 1000, "easeOutBack");
     isLandingPageOutOfViewport = false;
     resetAllColumns($("#fan-row"));
     document.location.hash = "";

@@ -14,12 +14,16 @@ body {
 
 #home-button {
     position: fixed;
+    width: $home-button-bar-width;
+    height: 100%;
+    background-color: black;
     z-index: 1;
     color: white;
+    text-align: center;
     cursor: pointer;
     &::before {
         font-size: 20pt;
-        margin: -6px;
+        margin: 0;
     }
 }
 
@@ -41,6 +45,7 @@ body {
     overflow-x: hidden;
     position: absolute;
     background-color: #d3d3d3;
+    padding: 0;
 }
 
 .col {
@@ -78,6 +83,8 @@ body {
 #fan-row {
     min-height: 100%;
     min-width: 100%;
+    margin: 0;
+    padding-left: $home-button-bar-width;
 }
 
 .thumbnail {

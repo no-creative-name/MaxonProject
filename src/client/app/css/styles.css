@@ -12,7 +12,8 @@
   height: 100%;
   z-index: 2;
   background: -webkit-linear-gradient(-45deg, white, #5a5a5a);
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  margin: 0; }
   #landing-page-content {
     color: #3d3d3d;
     font-family: "Lato";
@@ -48,13 +49,11 @@
   z-index: 2; }
 
 .video {
-  width: 100%;
   height: 100%;
-  padding: 2% 2% 0 2%;
   text-align: center;
   display: flex;
-  min-width: 100%;
-  height: 75%; }
+  height: 75%;
+  margin-left: 50px; }
   .video-thumb {
     width: 25%;
     height: 100%;
@@ -70,13 +69,13 @@
       box-shadow: 0 10px 50px black; }
   .video-player {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    z-index: 1500; }
 
 #video-thumb-container {
   display: flex;
-  width: 100%;
   height: 25%;
-  padding: 0 2% 0 2%; }
+  margin-left: 50px; }
 
 #video-container {
   min-width: 100%;
@@ -154,12 +153,16 @@ body {
 
 #home-button {
   position: fixed;
+  width: 50px;
+  height: 100%;
+  background-color: black;
   z-index: 1;
   color: white;
+  text-align: center;
   cursor: pointer; }
   #home-button::before {
     font-size: 20pt;
-    margin: -6px; }
+    margin: 0; }
 
 .overflow-y-visible {
   overflow-y: visible; }
@@ -175,7 +178,8 @@ body {
   height: 100%;
   overflow-x: hidden;
   position: absolute;
-  background-color: #d3d3d3; }
+  background-color: #d3d3d3;
+  padding: 0; }
 
 .col {
   padding: 0;
@@ -204,7 +208,9 @@ body {
 
 #fan-row {
   min-height: 100%;
-  min-width: 100%; }
+  min-width: 100%;
+  margin: 0;
+  padding-left: 50px; }
 
 .thumbnail {
   margin-top: 150px;
