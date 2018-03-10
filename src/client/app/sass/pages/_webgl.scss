@@ -1,9 +1,18 @@
 .webgl-viewer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin-left: $home-button-bar-width;
+    height: 100%;
+    #webgl-viewer-waiting-screen{
+        width: 100%;
+        background-color: black;
+        color: white;
+        position: absolute;
+        z-index: 2000;
+        text-align: center;
+    }
+    #gameContainer {
+        width: 100%;
+        height: 100%;
+    }
     .logo {
         background: url('../img/progressLogo.Light.png') no-repeat center / contain;
         width: 154px;
@@ -31,11 +40,6 @@
         }
         .title {
             margin-right: 10px;
-            float: right;
-        }
-        .fullscren {
-            background-image: url('../img/fullscreen.png');
-            width: 38px;
             float: right;
         }
     }
