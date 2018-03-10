@@ -3,7 +3,7 @@
 }
 
 .video {
-    height: 100%;
+    position: relative;
     text-align: center;
     display: flex;
     height: 75%;
@@ -21,6 +21,7 @@
         &-description {
             background-color: white;
             box-shadow: 0 10px 50px black;
+            user-select: none;
         }
     }
     &-player {
@@ -70,8 +71,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    z-index: 1;
+    opacity: 1;
+    z-index: 12000;
     transition: 0.4s;
     display: none;
 }
