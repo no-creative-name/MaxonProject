@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('#home-button').click(function(){onHomeButtonClick()});
     menuTopOnScroll();
 });
 
@@ -13,4 +14,8 @@ function menuTopOnScroll () {
             $('.thumbnail').attr('id', '');;
         }
     });
+}
+
+function onHomeButtonClick () {
+    window.location.href = "./index.html#running";
 }

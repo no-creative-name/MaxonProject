@@ -1,0 +1,35 @@
+.pdf-viewer {
+    height: 100%;
+    text-align: center;
+    margin-left: $home-button-bar-width;
+    display: flex;
+
+    #prev-button, #next-button {
+        background-color: $secondary-font-color;
+        display: inline-flex;
+        height: 100%;
+        flex: 1;
+        justify-content: center;
+        flex-direction: column;
+        color: $third-font-color;
+        &::before {
+            font-size: 100px;
+        }
+    }
+
+    .page-container {
+        display: inline-flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    #left-page {
+        height: 100%;
+        margin-left: auto;
+    }
+
+    #right-page {
+        height: 100%;
+        margin-right: auto;
+    }
+}

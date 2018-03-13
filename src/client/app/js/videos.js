@@ -42,11 +42,6 @@ function onThumbClick() {
     });
 }
 
-function onHomeButtonClick () {
-    window.location.href = "./index.html#running";
-}
-
 $(document).ready(function(){
     onThumbClick();
-    $('#home-button').click(function(){onHomeButtonClick()});
 });
