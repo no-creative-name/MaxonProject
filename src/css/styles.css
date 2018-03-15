@@ -182,7 +182,8 @@ body {
   height: 100%;
   font-family: "Lato";
   font-weight: 300;
-  display: none; }
+  display: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
 
 #home-button {
   position: fixed;
