@@ -111,11 +111,18 @@
   display: none; }
 
 .webgl-viewer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  margin-left: 50px;
+  height: 100%; }
+  .webgl-viewer #webgl-viewer-waiting-screen {
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    z-index: 2000;
+    text-align: center; }
+  .webgl-viewer #gameContainer {
+    width: 100%;
+    height: 100%; }
   .webgl-viewer .logo {
     background: url("../img/progressLogo.Light.png") no-repeat center/contain;
     width: 154px;
@@ -141,16 +148,39 @@
     .webgl-viewer .footer .title {
       margin-right: 10px;
       float: right; }
-    .webgl-viewer .footer .fullscren {
-      background-image: url("../img/fullscreen.png");
-      width: 38px;
-      float: right; }
+
+.pdf-viewer {
+  height: 100%;
+  text-align: center;
+  margin-left: 50px;
+  display: flex; }
+  .pdf-viewer #prev-button, .pdf-viewer #next-button {
+    background-color: #6d6d6d;
+    display: inline-flex;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    color: white; }
+    .pdf-viewer #prev-button::before, .pdf-viewer #next-button::before {
+      font-size: 100px; }
+  .pdf-viewer .page-container {
+    display: inline-flex;
+    justify-content: center;
+    width: 50%; }
+  .pdf-viewer #left-page {
+    height: 100%;
+    margin-left: auto; }
+  .pdf-viewer #right-page {
+    height: 100%;
+    margin-right: auto; }
 
 body {
   width: 100%;
   height: 100%;
   font-family: "Lato";
-  font-weight: 300; }
+  font-weight: 300;
+  display: none; }
 
 #home-button {
   position: fixed;
@@ -238,7 +268,6 @@ img {
 .info {
   min-height: 80%;
   display: none;
-  opacity: 0;
   flex-basis: 100%;
   overflow: hidden;
   margin: 40px; }
@@ -255,5 +284,4 @@ img {
     font-size: 3em; }
 
 .is-visible {
-  display: block;
-  opacity: 1; }
+  display: block; }
