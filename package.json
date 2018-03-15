@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass ./src/client/app/sass/ -o ./src/client/app/css/",
-    "build-css:watch": "node-sass ./src/client/app/sass/ -o ./src/client/app/css/ --watch",
+    "build-css": "node-sass ./src/sass/ -o ./src/css/",
+    "build-css:watch": "node-sass ./src/sass/ -o ./src/css/ --watch",
     "start:dev": "webpack-dev-server --host 0.0.0.0",
     "start:all": "start npm run build-css:watch && start npm run start:dev"
   },
