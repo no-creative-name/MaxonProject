@@ -149,12 +149,12 @@
       margin-right: 10px;
       float: right; }
 
-.pdf-viewer {
+.magazine {
   height: 100%;
   text-align: center;
   margin-left: 50px;
   display: flex; }
-  .pdf-viewer #prev-button, .pdf-viewer #next-button {
+  .magazine #prev-button, .magazine #next-button {
     background-color: #6d6d6d;
     display: inline-flex;
     height: 100%;
@@ -162,16 +162,16 @@
     justify-content: center;
     flex-direction: column;
     color: white; }
-    .pdf-viewer #prev-button::before, .pdf-viewer #next-button::before {
+    .magazine #prev-button::before, .magazine #next-button::before {
       font-size: 100px; }
-  .pdf-viewer .page-container {
+  .magazine .page-container {
     display: inline-flex;
     justify-content: center;
     width: 50%; }
-  .pdf-viewer #left-page {
+  .magazine #left-page {
     height: 100%;
     margin-left: auto; }
-  .pdf-viewer #right-page {
+  .magazine #right-page {
     height: 100%;
     margin-right: auto; }
 

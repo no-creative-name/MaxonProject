@@ -1,7 +1,7 @@
 let numberOfPages = 23;
 let currentLeftPage = 0;
 let currentRightPage = 1;
-let imgStringPrefix = "../docs/maxon_magazine/maxon_magazine-"
+let imgStringPrefix = "./docs/maxon_magazine/maxon_magazine-"
 
 $(document).ready(function(){
 
