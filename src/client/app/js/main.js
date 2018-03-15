@@ -5,7 +5,6 @@ $(document).ready(function(){
         $("body").fadeOut(1000, redirectPage);      
     });
 
-    $('#home-button').click(function(){onHomeButtonClick()});
     menuTopOnScroll();
 });
 
@@ -28,8 +27,4 @@ function menuTopOnScroll () {
             $('.thumbnail').attr('id', '');;
         }
     });
-}
-
-function onHomeButtonClick () {
-    window.location.href = "./index.html#running";
 }

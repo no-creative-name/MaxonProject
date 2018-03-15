@@ -149,3 +149,8 @@ img {
     display: block;
 }
 
+.transition {
+    &:hover {
+        text-decoration: none;
+    }
+}

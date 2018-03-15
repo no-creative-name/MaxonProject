@@ -285,3 +285,6 @@ img {
 
 .is-visible {
   display: block; }
+
+.transition:hover {
+  text-decoration: none; }
