@@ -130,13 +130,38 @@ img {
     
     &.align-left {
         text-align: left;
+        
+        .subpage-link {
+            float: left;
+            width: 50%;
+            height: 50px;
+            line-height: 50px;
+            background-color: black;
+            color: white;
+            display: block;
+            white-space: nowrap;
+            text-align: center;
+        }
     }
 
     &.align-right {
         text-align: right;
+        
+        .subpage-link {
+            float: right;
+            width: 50%;
+            height: 100px;
+            line-height: 100px;
+            background-color: black;
+            color: white;
+            display: block;
+            white-space: nowrap;
+            text-align: center;
+        }
     }
     &-text {
-        margin-bottom: 100px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
     &-headline {
         white-space: nowrap;
