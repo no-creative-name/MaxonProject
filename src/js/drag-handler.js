@@ -6,10 +6,10 @@ var isAnyColumnActive = false;
 
 function resetSiblingColumns (column) {
     column.parent().children().removeClass("col-1 col-9").addClass("col-3");
-    column.parent().children().children(".info").removeClass("is-visible");
+    column.parent().children().children(".info").removeClass("is-visible").addClass("no-wrap");
 }
 
-function resetAllColumns (row) {
+function resetAllColumnsOfRow (row) {
     $(document.body).removeClass("overflow-y-visible");
     row.children().removeClass("col-1 col-9 col-active").addClass("col-3");
     row.children().children(".info").removeClass("is-visible");
@@ -51,8 +51,10 @@ function onColumnClick (elem) {
         else {
             makeInactiveColumnActive(elem);
         }
+
         // Timeout to prevent multiple animations to disturb each other
         setTimeout(function() {
+            elem.children(".info").toggleClass("no-wrap");
             isColumnTransformationFinished = true;
         }, 1000);
     }
@@ -92,11 +94,13 @@ function handleColumnDrag(ev) {
             makeInactiveColumnActive(elem);
         }
         // Timeout to prevent multiple animations to disturb each other
+
+
         setTimeout(function() {
+            elem.children(".info").toggleClass("no-wrap");
             isColumnTransformationFinished = true;
         }, 1000);
     } 
-
 }
 
 //  LANDING PAGE DRAG
@@ -157,7 +161,7 @@ function onHomeButtonClick() {
     var lPage = $("#landing-page");
     lPage.animate({'left': 0}, 1000, "easeOutBack");
     isLandingPageOutOfViewport = false;
-    resetAllColumns($("#fan-row"));
+    resetAllColumnsOfRow($("#fan-row"));
     document.location.hash = "";
 }
 

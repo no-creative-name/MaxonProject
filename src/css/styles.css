@@ -284,7 +284,6 @@ img {
       background-color: black;
       color: white;
       display: block;
-      white-space: nowrap;
       text-align: center; }
   .info.align-right {
     text-align: right; }
@@ -296,13 +295,11 @@ img {
       background-color: black;
       color: white;
       display: block;
-      white-space: nowrap;
       text-align: center; }
   .info-text {
     margin-top: 40px;
     margin-bottom: 40px; }
   .info-headline {
-    white-space: nowrap;
     font-family: "Lato";
     font-weight: bold;
     font-size: 3em; }
@@ -312,3 +309,6 @@ img {
 
 .transition:hover {
   text-decoration: none; }
+
+.no-wrap {
+  white-space: nowrap; }

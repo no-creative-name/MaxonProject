@@ -139,7 +139,6 @@ img {
             background-color: black;
             color: white;
             display: block;
-            white-space: nowrap;
             text-align: center;
         }
     }
@@ -155,7 +154,6 @@ img {
             background-color: black;
             color: white;
             display: block;
-            white-space: nowrap;
             text-align: center;
         }
     }
@@ -164,7 +162,6 @@ img {
         margin-bottom: 40px;
     }
     &-headline {
-        white-space: nowrap;
         font-family: $main-font-family;
         font-weight: bold;
         font-size: 3em;
@@ -179,4 +176,8 @@ img {
     &:hover {
         text-decoration: none;
     }
+}
+
+.no-wrap {
+    white-space: nowrap;
 }
