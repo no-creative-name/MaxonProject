@@ -117,23 +117,17 @@ img {
 
 .thumb-placeholder {
     visibility: hidden;
-    height: 220px;
+    height: 400px;
 }
 
 .info {
+    text-align: center;
     min-height: 80%;
     display: none;
     flex-basis: 100%;
     overflow: hidden;
     margin: 40px;
-    
-    &.align-left {
-        text-align: left;
-    }
 
-    &.align-right {
-        text-align: right;
-    }
     &-text {
         margin-top: 40px;
         margin-bottom: 40px;

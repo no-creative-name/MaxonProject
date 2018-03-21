@@ -24,7 +24,7 @@ function menuTopOnScroll () {
             $('.thumbnail').attr('id', 'fixed-on-top');
         }
         if ($(".container").scrollTop() < 150-10 ) {
-            $('.thumbnail').attr('id', '');;
+            $('.thumbnail').attr('id', '');
         }
     });
 }
