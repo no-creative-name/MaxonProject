@@ -113,7 +113,6 @@ body {
 img {
     //-webkit-user-select: none;
     user-select: none;
-    pointer-events: none;
 }
 
 .thumb-placeholder {
@@ -130,32 +129,10 @@ img {
     
     &.align-left {
         text-align: left;
-        
-        .subpage-link {
-            float: left;
-            width: 50%;
-            height: 50px;
-            line-height: 50px;
-            background-color: black;
-            color: white;
-            display: block;
-            text-align: center;
-        }
     }
 
     &.align-right {
         text-align: right;
-        
-        .subpage-link {
-            float: right;
-            width: 50%;
-            height: 50px;
-            line-height: 50px;
-            background-color: black;
-            color: white;
-            display: block;
-            text-align: center;
-        }
     }
     &-text {
         margin-top: 40px;
@@ -165,6 +142,15 @@ img {
         font-family: $main-font-family;
         font-weight: bold;
         font-size: 3em;
+    }
+    .subpage-link img{
+        width: 300px;
+        height: 300px;
+        transition-duration: 0.5s;
+        &:hover {
+            width: 400px;
+            height: 400px,
+        }
     }
 }
 
